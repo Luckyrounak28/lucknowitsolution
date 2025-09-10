@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucknow IT Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Keeping only the styles that cannot be easily replicated with Tailwind classes */
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+      .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+      .gradient-text-orange {
+        background: linear-gradient(90deg, #f97316, #fb923c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        color: #f97316;
+      }
+      .hero-text {
+        background: linear-gradient(90deg, #f97316, #fb923c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientFlow 5s ease infinite;
+      }
+      @keyframes gradientFlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-30px); }
+      }
+      .slide-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .slide-in-up.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .footer-wave::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"%3E%3Cpath d="M0,0L0,60C300,90,600,120,900,120C1200,120,1200,0,1200,0L0,0Z" fill="%23ffffff" fill-opacity="0.15"/%3E%3C/svg%3E');
+        background-repeat: repeat-x;
+        background-size: 1200px 200px;
+        transform: translateY(-199px);
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 font-inter overflow-x-hidden">
+    <!-- Header & Navigation -->
+    <header id="navbar" class="fixed top-0 z-50 w-full transition-all duration-300 bg-[linear-gradient(90deg,rgba(26,32,44,0.9),rgba(67,65,144,0.9))] backdrop-blur-sm shadow-lg">
+      <nav class="container mx-auto px-4 py-4 flex justify-between items-center flex-wrap">
+        <div class="flex items-center">
+          <span class="text-2xl font-bold text-white tracking-wider">Lucknow IT</span>
+          <span class="text-2xl font-bold gradient-text-orange">Solution</span>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden text-white hover:text-orange-500 focus:outline-none">
+          <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+        <div id="nav-links" class="hidden md:flex flex-grow justify-end items-center space-x-4 mt-4 md:mt-0 md:relative md:bg-transparent md:p-0 md:shadow-none md:rounded-none">
+          <a href="#home" class="text-gray-200 p-2.5 rounded-lg transition-all duration-300 ease-in-out hover:text-orange-500 hover:bg-white/10 hover:-translate-y-0.5">Home</a>
+          <a href="#about" class="text-gray-200 p-2.5 rounded-lg transition-all duration-300 ease-in-out hover:text-orange-500 hover:bg-white/10 hover:-translate-y-0.5">About Us</a>
+          <a href="#services" class="text-gray-200 p-2.5 rounded-lg transition-all duration-300 ease-in-out hover:text-orange-500 hover:bg-white/10 hover:-translate-y-0.5">Services</a>
+          <a href="#projects" class="text-gray-200 p-2.5 rounded-lg transition-all duration-300 ease-in-out hover:text-orange-500 hover:bg-white/10 hover:-translate-y-0.5">Projects</a>
+          <a href="#blogs" class="text-gray-200 p-2.5 rounded-lg transition-all duration-300 ease-in-out hover:text-orange-500 hover:bg-white/10 hover:-translate-y-0.5">Blogs</a>
+          <a href="#footer" class="text-gray-200 p-2.5 rounded-lg transition-all duration-300 ease-in-out hover:text-orange-500 hover:bg-white/10 hover:-translate-y-0.5">Contact</a>
+          <a href="tel:+918240740018" class="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:from-orange-400 hover:to-orange-500 hover:scale-105">Call: +91 8240740018</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero-section text-white pt-28 pb-20 md:pt-32 md:pb-24 relative">
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="bgimg.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900/70 to-indigo-900/70 z-10"></div>
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
+          <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-4 slide-in-up">
+              No.1 Website Development <br class="hidden md:block" /><span class="hero-text">Company in India</span>
+            </h1>
+            <p class="text-lg md:text-xl max-w-xl mx-auto md:mx-0 mb-8 text-gray-200 slide-in-up" style="transition-delay: 0.2s;">
+              Transform your vision into reality with cutting-edge IT solutions. From web development to digital marketing, we empower your business to thrive in the digital era.
+            </p>
+            <a href="#footer" class="inline-block bg-gradient-to-r from-orange-500 to-orange-400 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 slide-in-up" style="transition-delay: 0.4s;">
+              Get Started Now
+            </a>
+          </div>
+          <div class="md:w-1/2 flex justify-center slide-in-up" style="transition-delay: 0.6s;">
+            <svg class="w-full max-w-lg hero-image" viewBox="0 0 740 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="180" y="50" width="400" height="250" rx="20" fill="#E2E8F0"/>
+              <rect x="200" y="70" width="360" height="210" rx="10" fill="#FFFFFF"/>
+              <circle cx="380" cy="180" r="80" fill="#93C5FD"/>
+              <path d="M380 180L450 180M380 180L380 250M380 180L310 180L380 110L380 180Z" stroke="#FB923C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M300 280C300 300 320 320 350 320C380 320 400 300 400 280" stroke="#CBD5E0" stroke-width="5"/>
+              <rect x="220" y="300" width="320" height="150" rx="10" fill="#CBD5E0"/>
+              <path d="M250 350L500 350L450 400L250 400L250 350Z" fill="#CBD5E0"/>
+              <path d="M300 450L450 450" stroke="#CBD5E0" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="375" cy="450" r="10" fill="#E2E8F0"/>
+              <path d="M470 450C470 450 480 430 480 420C480 410 470 410 470 420C470 430 460 450 460 450" fill="#FB923C"/>
+              <rect x="400" y="150" width="120" height="10" fill="#FB923C" rx="5"/>
+              <rect x="400" y="170" width="80" height="10" fill="#FB923C" rx="5"/>
+              <rect x="400" y="190" width="100" height="10" fill="#FB923C" rx="5"/>
+              <rect x="400" y="210" width="60" height="10" fill="#FB923C" rx="5"/>
+              <rect x="400" y="230" width="90" height="10" fill="#FB923C" rx="5"/>
+              <rect x="400" y="250" width="70" height="10" fill="#FB923C" rx="5"/>
+              <circle cx="280" cy="180" r="40" fill="#E0B7FF"/>
+              <path d="M280 180L320 180L280 140L280 180Z" fill="#667EEA"/>
+              <rect x="250" y="280" width="60" height="20" rx="10" fill="#FB923C"/>
+              <path d="M300 280C300 280 280 260 250 260C220 260 200 280 200 280Z" fill="#93C5FD"/>
+              <path d="M300 280C300 280 320 260 350 260C380 260 400 280 400 280" fill="#93C5FD"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 slide-in-up">Our Comprehensive Services</h2>
+          <p class="text-lg text-gray-600 mb-12 max-w-4xl mx-auto slide-in-up" style="transition-delay: 0.2s;">
+            Discover a wide range of IT services designed to elevate your business. From innovative web solutions to strategic digital marketing, we cover all your technological needs.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Full Stack Development Card -->
+            <div class="group relative flex flex-col items-center p-6 rounded-xl shadow-md bg-gradient-to-br from-blue-100 to-blue-200 border border-blue-300 transition-all duration-400 ease-in-out hover:translate-y-[-15px] hover:scale-[1.03] hover:shadow-lg hover:shadow-blue-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-20 h-20 rounded-full bg-blue-300 flex items-center justify-center transition-all duration-300 group-hover:rotate-15 group-hover:scale-125 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 18l-6-6-6 6" />
+                    <path d="M16 6l-6 6-6-6" />
+                    <line x1="6" y1="12" x2="18" y2="12" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Full Stack Development</h3>
+                <p class="text-gray-600 transition-opacity duration-300 group-hover:opacity-0">End-to-end web development with modern frameworks, ensuring scalable and high-performance applications.</p>
+              </div>
+              <!-- Tech Stack on Hover -->
+              <div class="absolute inset-0 bg-blue-50/90 backdrop-blur-sm rounded-xl flex items-center justify-center text-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p class="font-semibold text-gray-800">HTML, CSS, JavaScript, React, Node.js, Express, PHP, MySQL, TypeScript, Python</p>
+              </div>
+            </div>
+
+            <!-- Android Development Card -->
+            <div class="group relative flex flex-col items-center p-6 rounded-xl shadow-md bg-gradient-to-br from-green-100 to-green-200 border border-green-300 transition-all duration-400 ease-in-out hover:translate-y-[-15px] hover:scale-[1.03] hover:shadow-lg hover:shadow-green-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-20 h-20 rounded-full bg-green-300 flex items-center justify-center transition-all duration-300 group-hover:rotate-15 group-hover:scale-125 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                    <path d="M12 18h.01"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Android Development</h3>
+                <p class="text-gray-600 transition-opacity duration-300 group-hover:opacity-0">Custom Android apps with seamless performance and user-friendly interfaces tailored to your brand.</p>
+              </div>
+              <!-- Tech Stack on Hover -->
+              <div class="absolute inset-0 bg-green-50/90 backdrop-blur-sm rounded-xl flex items-center justify-center text-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p class="font-semibold text-gray-800">Kotlin, Java, Android Studio, Firebase</p>
+              </div>
+            </div>
+
+            <!-- SEO Optimization Card -->
+            <div class="group relative flex flex-col items-center p-6 rounded-xl shadow-md bg-gradient-to-br from-purple-100 to-purple-200 border border-purple-300 transition-all duration-400 ease-in-out hover:translate-y-[-15px] hover:scale-[1.03] hover:shadow-lg hover:shadow-purple-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-20 h-20 rounded-full bg-purple-300 flex items-center justify-center transition-all duration-300 group-hover:rotate-15 group-hover:scale-125 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">SEO Optimization</h3>
+                <p class="text-gray-600 transition-opacity duration-300 group-hover:opacity-0">Boost your online visibility with expert SEO strategies to rank higher on search engines.</p>
+              </div>
+              <!-- Tech Stack on Hover -->
+              <div class="absolute inset-0 bg-purple-50/90 backdrop-blur-sm rounded-xl flex items-center justify-center text-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p class="font-semibold text-gray-800">Google Analytics, Ahrefs, SEMrush, Keywords Everywhere</p>
+              </div>
+            </div>
+
+            <!-- Web Design Card -->
+            <div class="group relative flex flex-col items-center p-6 rounded-xl shadow-md bg-gradient-to-br from-orange-100 to-orange-200 border border-orange-300 transition-all duration-400 ease-in-out hover:translate-y-[-15px] hover:scale-[1.03] hover:shadow-lg hover:shadow-orange-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-20 h-20 rounded-full bg-orange-300 flex items-center justify-center transition-all duration-300 group-hover:rotate-15 group-hover:scale-125 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M1 12h4M19 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Web Design</h3>
+                <p class="text-gray-600 transition-opacity duration-300 group-hover:opacity-0">Creative and responsive web designs that enhance user engagement and brand identity.</p>
+              </div>
+              <!-- Tech Stack on Hover -->
+              <div class="absolute inset-0 bg-orange-50/90 backdrop-blur-sm rounded-xl flex items-center justify-center text-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p class="font-semibold text-gray-800">Figma, Sketch, Adobe XD, Photoshop, HTML, CSS</p>
+              </div>
+            </div>
+            
+            <!-- Digital Marketing Card -->
+            <div class="group relative flex flex-col items-center p-6 rounded-xl shadow-md bg-gradient-to-br from-pink-100 to-pink-200 border border-pink-300 transition-all duration-400 ease-in-out hover:translate-y-[-15px] hover:scale-[1.03] hover:shadow-lg hover:shadow-pink-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-20 h-20 rounded-full bg-pink-300 flex items-center justify-center transition-all duration-300 group-hover:rotate-15 group-hover:scale-125 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Digital Marketing</h3>
+                <p class="text-gray-600 transition-opacity duration-300 group-hover:opacity-0">Targeted marketing campaigns to increase your reach and convert leads into customers.</p>
+              </div>
+              <!-- Tech Stack on Hover -->
+              <div class="absolute inset-0 bg-pink-50/90 backdrop-blur-sm rounded-xl flex items-center justify-center text-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p class="font-semibold text-gray-800">Meta Ads, Google Ads, Content Marketing, Email Marketing</p>
+              </div>
+            </div>
+
+            <!-- UI/UX Design Card -->
+            <div class="group relative flex flex-col items-center p-6 rounded-xl shadow-md bg-gradient-to-br from-teal-100 to-teal-200 border border-teal-300 transition-all duration-400 ease-in-out hover:translate-y-[-15px] hover:scale-[1.03] hover:shadow-lg hover:shadow-teal-300">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-20 h-20 rounded-full bg-teal-300 flex items-center justify-center transition-all duration-300 group-hover:rotate-15 group-hover:scale-125 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2L3 14h7l8 8"></path>
+                    <path d="M3 3l18 18"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">UI/UX Design</h3>
+                <p class="text-gray-600 transition-opacity duration-300 group-hover:opacity-0">User-centric designs that improve usability and create memorable digital experiences.</p>
+              </div>
+              <!-- Tech Stack on Hover -->
+              <div class="absolute inset-0 bg-teal-50/90 backdrop-blur-sm rounded-xl flex items-center justify-center text-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p class="font-semibold text-gray-800">Figma, Sketch, Adobe XD, InVision</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-24 bg-gray-100">
+        <div class="container mx-auto px-4 text-center slide-in-up" style="transition-delay: 0.2s;">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About Us</h2>
+          <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            Founded in 2015, Lucknow IT Solution is a premier IT service provider based in Lucknow, India. Our team of skilled professionals is dedicated to delivering innovative, scalable, and secure digital solutions tailored to your business needs. With a client-centric approach, we have successfully empowered over 500+ businesses across various industries, including e-commerce, healthcare, and education. Our mission is to bridge the gap between technology and business success, ensuring every project reflects excellence and creativity.
+          </p>
+          <a href="#footer" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+            Learn More
+          </a>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="bg-gradient-to-br from-white to-gray-50 py-20">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 slide-in-up">Our Pricing Plans</h2>
+          <p class="text-lg text-gray-600 mb-12 max-w-4xl mx-auto slide-in-up" style="transition-delay: 0.2s;">
+            Choose the perfect plan for your business with hosting included in all packages.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Basic Plan -->
+            <div class="pricing-card basic p-6 slide-in-up bg-gradient-to-br from-gray-200 to-gray-100 border border-gray-300 rounded-2xl transition-all duration-400 hover:translate-y-[-10px] hover:scale-[1.03] hover:shadow-2xl hover:border-orange-400" style="transition-delay: 0.4s;">
+              <h3 class="text-2xl font-semibold mb-4 text-gray-900">Basic</h3>
+              <p class="text-4xl font-extrabold text-orange-500 mb-6">₹5,999<span class="text-lg font-normal text-gray-600">/mo</span></p>
+              <ul class="space-y-3 mb-6 text-left px-6 text-gray-700">
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> 1 Website</li>
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> 10 GB Hosting</li>
+                <li class="flex items-center"><span class="text-gray-500 mr-3">✗</span> Basic SEO</li>
+                <li class="flex items-center"><span class="text-gray-500 mr-3">✗</span> Mobile Optimization</li>
+                <li class="flex items-center"><span class="text-gray-500 mr-3">✗</span> 24/7 Support</li>
+              </ul>
+              <a href="#footer" class="inline-block bg-gradient-to-r from-orange-500 to-orange-400 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md hover:shadow-orange-400">Get Started</a>
+            </div>
+            <!-- Advance Plan -->
+            <div class="pricing-card advance p-6 slide-in-up bg-gradient-to-br from-yellow-100 to-yellow-200 border-2 border-orange-500 rounded-2xl scale-[1.05] shadow-2xl shadow-orange-300 transition-all duration-400 hover:translate-y-[-15px] hover:scale-[1.07] hover:shadow-orange-400" style="transition-delay: 0.6s;">
+              <h3 class="text-2xl font-semibold mb-4 bg-gradient-to-r from-orange-500 to-orange-400 text-transparent bg-clip-text">Advance</h3>
+              <p class="text-4xl font-extrabold text-gray-900 mb-6">₹12,999<span class="text-lg font-normal text-gray-600">/mo</span></p>
+              <ul class="space-y-3 mb-6 text-left px-6 text-gray-800 font-medium">
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> 3 Websites</li>
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> 50 GB Hosting</li>
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> Basic SEO</li>
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> Mobile Optimization</li>
+                <li class="flex items-center"><span class="text-gray-500 mr-3">✗</span> 24/7 Support</li>
+              </ul>
+              <a href="#footer" class="inline-block bg-gradient-to-r from-gray-900 to-indigo-900 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:from-indigo-900 hover:to-gray-900 hover:scale-105 hover:shadow-md hover:shadow-indigo-900">Get Started</a>
+            </div>
+            <!-- Premium Plan -->
+            <div class="pricing-card premium p-6 slide-in-up bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-orange-500 rounded-2xl scale-[1.05] shadow-2xl shadow-orange-900 transition-all duration-400 hover:translate-y-[-15px] hover:scale-[1.07] hover:shadow-orange-900" style="transition-delay: 0.8s;">
+              <h3 class="text-2xl font-semibold mb-4 text-white">Premium</h3>
+              <p class="text-4xl font-extrabold text-orange-500 mb-6">₹24,999<span class="text-lg font-normal text-gray-300">/mo</span></p>
+              <ul class="space-y-3 mb-6 text-left px-6 text-gray-200 font-medium">
+                <li class="flex items-center"><span class="text-green-400 mr-3">✔</span> Unlimited Websites</li>
+                <li class="flex items-center"><span class="text-green-400 mr-3">✔</span> 100 GB Hosting</li>
+                <li class="flex items-center"><span class="text-green-400 mr-3">✔</span> Advanced SEO</li>
+                <li class="flex items-center"><span class="text-green-400 mr-3">✔</span> Mobile Optimization</li>
+                <li class="flex items-center"><span class="text-green-400 mr-3">✔</span> 24/7 Support</li>
+              </ul>
+              <a href="#footer" class="inline-block bg-gradient-to-r from-orange-500 to-orange-400 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:from-orange-400 hover:to-orange-500 hover:scale-105 hover:shadow-md hover:shadow-orange-500">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack Section -->
+      <section id="tech-stack" class="py-24 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 slide-in-up">Technology We Use</h2>
+          <p class="text-lg text-gray-600 mb-12 max-w-4xl mx-auto slide-in-up" style="transition-delay: 0.2s;">
+            This platform is built using a modern and efficient web development stack to ensure a fast, responsive, and visually appealing experience.
+          </p>
+          <div class="flex flex-wrap justify-center items-center gap-8 slide-in-up" style="transition-delay: 0.4s;">
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-orange-500" viewBox="0 0 24 24" fill="currentColor"><path d="M16 2.05v-2.05l-6 1.95v-1.95l-6 1.95v20.05l6-2v2l6-2v-16.05zm-6 18.05l-4-1.3v-15.4l4 1.3v15.4zm6-15.4l-4 1.3v15.4l4 1.3v-15.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">HTML</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">CSS</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-yellow-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm-3.5 15.5c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zM16 11.5c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">JavaScript</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-cyan-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">Tailwind CSS</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-sky-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">React</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">Node.js</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-700" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">TypeScript</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-purple-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">PHP</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-orange-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">MySQL</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-amber-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">Firebase</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-yellow-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">Vue.js</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">Angular</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-cyan-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93h2V12.07h-2v5.86zm-1.01-6.7h4v2.4h-4v-2.4z"/></svg>
+              <p class="mt-2 text-lg font-medium text-gray-800">Django</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer" class="footer-wave text-gray-300 py-12 bg-gradient-to-br from-gray-900 to-gray-800 relative">
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 max-w-4xl mx-auto mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Get in Touch</h3>
+            <form id="contactForm" class="space-y-6">
+              <div class="flex flex-wrap gap-4 mb-4">
+                <div class="flex-1 min-w-80">
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                  <input type="text" id="name" name="name" class="input-glow block w-full rounded-lg border-gray-300 p-3 transition-all duration-300 focus:outline-none focus:border-orange-400 focus:ring-4 focus:ring-orange-300" required>
+                </div>
+                <div class="flex-1 min-w-80">
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <input type="email" id="email" name="email" class="input-glow block w-full rounded-lg border-gray-300 p-3 transition-all duration-300 focus:outline-none focus:border-orange-400 focus:ring-4 focus:ring-orange-300" required>
+                </div>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" class="input-glow block w-full rounded-lg border-gray-300 p-3 transition-all duration-300 focus:outline-none focus:border-orange-400 focus:ring-4 focus:ring-orange-300" required></textarea>
+              </div>
+              <div id="form-message" class="hidden"></div>
+              <div>
+                <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-orange-400 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-400">Send Message</button>
+              </div>
+            </form>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 class="text-xl font-bold text-white mb-4">Lucknow IT Solution</h3>
+              <p class="text-gray-400">Empowering businesses with innovative IT solutions since 2015.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+              <ul class="space-y-2">
+                <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                <li><a href="#footer" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+              <p class="text-gray-400">Phone: +91 8240740018</p>
+              <p class="text-gray-400">Email: info@lucknowitsolution.com</p>
+            </div>
+          </div>
+          <p class="text-center text-gray-400 text-sm mt-8">&copy; 2025 Lucknow IT Solution. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('form-message');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const navLinks = document.getElementById('nav-links');
+
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', () => {
+          navLinks.classList.toggle('hidden');
+          navLinks.classList.toggle('flex');
+          navLinks.classList.toggle('absolute');
+          navLinks.classList.toggle('top-full');
+          navLinks.classList.toggle('left-0');
+          navLinks.classList.toggle('right-0');
+          navLinks.classList.toggle('flex-col');
+          navLinks.classList.toggle('bg-gray-900/95');
+          navLinks.classList.toggle('p-5');
+          navLinks.classList.toggle('rounded-b-xl');
+          navLinks.classList.toggle('shadow-lg');
+          navLinks.classList.toggle('space-y-4');
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            if (navLinks.classList.contains('flex')) {
+              navLinks.classList.remove('flex', 'absolute', 'top-full', 'left-0', 'right-0', 'flex-col', 'bg-gray-900/95', 'p-5', 'rounded-b-xl', 'shadow-lg', 'space-y-4');
+              navLinks.classList.add('hidden');
+            }
+          });
+        });
+
+        // Form submission logic
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const message = form.message.value.trim();
+
+          if (name === '' || email === '' || message === '') {
+            formMessage.textContent = 'Please fill out all fields.';
+            formMessage.className = 'text-center text-sm font-medium py-2 rounded-md bg-red-100 text-red-700 block';
+          } else {
+            console.log('Form submitted successfully!');
+            console.log('Name:', name);
+            console.log('Email:', email);
+            console.log('Message:', message);
+            formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+            formMessage.className = 'text-center text-sm font-medium py-2 rounded-md bg-green-100 text-green-700 block';
+            form.reset();
+          }
+        });
+
+        // Intersection Observer for scroll-in animations
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.2
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        document.querySelectorAll('.slide-in-up').forEach(element => {
+          observer.observe(element);
+        });
+      });
+    </script>
+  </body>
+</html>
